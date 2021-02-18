@@ -1,0 +1,28 @@
+@import "../_site.scss";
+@import "../_cards.scss";
+
+.custom-class {
+    // Add another class's css to this one's
+    @extend .card-header;
+
+    // Phone screen css
+    width: 78vw;
+
+    // Append more info (becomes .custom-class:not(:last-child())
+    &:not(:last-child()) {
+        border-bottom: 1rem solid blueviolet;
+    }
+
+    // Child elements (becomes ".custom-class .custom-child")
+    .custom-child {
+        background-color: burlywood;
+    }
+
+    // Screen width break-points
+    @media screen and (min-width: $breakpoint-tablet) {
+        width: 80%;
+    }
+    @media screen and (min-width: $breakpoint-desktop) {
+        width: 60%;
+    }
+}

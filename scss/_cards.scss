@@ -1,0 +1,28 @@
+@import "_variables.scss";
+
+.card {
+    .card-header {
+        border: 1px solid $black;
+        padding: 1.15rem 1.5rem;
+        border-radius: 0.5rem;
+        background-color: $brown + dd;
+        color: $white;
+
+        &:not(:only-child) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+    
+    .card-body {
+        border: 1px solid $black;
+        padding: 1.25rem 2rem;
+        border-radius: 0.5rem;
+
+        &:not(:only-child) {
+            border-top: unset;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+}

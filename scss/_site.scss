@@ -1,0 +1,153 @@
+@import "_variables.scss";
+
+/* General Layout */
+body {
+    font-family: helvetica, sans-serif;
+    background-color: $white;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 60px auto 120px;
+    grid-template-areas: 
+    "header"
+    "main-content"
+    "footer";
+    margin: 0;
+}
+
+/* Header */
+header {
+    grid-area: header;
+    display: grid;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px auto auto auto;
+    grid-template-areas: 
+    "logo hamburger"
+    "nav nav";
+    background-color: $green + aa;
+    color: $white;
+    word-wrap: break-word;
+    z-index: 1;
+
+    /* Navigation */
+    .nav-bar-holder {
+        display: none;
+        grid-area: nav;
+    }
+    .nav-bar {
+        display: flex;
+        align-items: center;
+
+        & > a {
+            color: $white;
+            text-decoration: none;
+            margin: 10px 8px;
+            font-weight: bold;
+            text-align: center;
+
+            & :visited {
+                color: $white;
+                text-decoration: none;
+            }
+            & :hover {
+                color: $black;
+            }
+            &.active{
+                color: $black;
+                text-decoration: underline;
+                font-weight: bolder;
+            }
+        }
+    }
+    .sa-logo {
+        max-width: 80px;
+        margin: -10px;
+    }
+    .nav-bar-toggler {
+        grid-area: hamburger;
+        justify-self: flex-end;
+        align-self: center;
+        margin-right: 1rem;
+        background-color: unset;
+        border: unset;
+        width: min-content;
+    }
+}
+
+/* Main */
+main {
+    grid-area: main-content;
+    padding: 1rem 1rem;
+}
+
+/* Aside */
+aside {
+    grid-area: side;
+    padding: 1rem 1rem;
+    
+    > div {
+        @media screen and (min-width: $breakpoint-tablet) {
+            position: sticky;
+            position: -webkit-sticky;
+            top: 90px;
+        }
+        @media screen and (min-width: $breakpoint-desktop) {
+            top: 85px;
+        }
+    }
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    background-color: $grey;
+    color: $white;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 5px 5px $grey;
+
+    /* Contact Links */
+    .contact-links {
+        display: flex;
+        padding-left: 0;
+        list-style-type: none;
+    }
+    .contact-links > li {
+        margin: 0 3px;
+    }
+    .contact-address{
+    }
+    .footer-icon {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .motto {
+    }
+}
+
+/* Headers */
+h1 { font-size: 2.2rem; margin: 10px 0px; }
+h2 { font-size: 1.7rem; margin: 10px 0px; }
+h3 { font-size: 1.3rem; margin: 10px 0px; }
+
+/* Slideshow */
+.slideshow > .slide {
+    display: none;
+    margin: auto;
+}
+.hamburger-menu {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+img {
+    height: auto;
+    width: 100%;
+}

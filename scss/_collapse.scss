@@ -1,0 +1,18 @@
+
+.collapse {
+    display: none;
+
+    &.show {
+        display: block;
+    }
+}
+
+@keyframes slideOut {
+    from { max-height: 0; }
+    to { height: auto; }
+    
+}
+@keyframes slideIn {
+    from { height: auto; }
+    to { height: 0; }
+}

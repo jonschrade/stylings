@@ -1,0 +1,37 @@
+
+
+.nav-tabs {
+    list-style-type: none;
+    display: flex;
+    border-bottom: 1px solid $grey;
+    padding-left: 0;
+    &.nav-tabs-column {
+        flex-direction: column;
+        border-bottom: unset;
+
+        .nav-item{
+            border-bottom: 1px solid $grey;
+            border-right: unset;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+    }
+
+    .nav-item{
+        border: 1px solid $grey;
+        border-bottom: unset;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        padding: 8px 8px 4px 8px;
+        cursor: pointer;
+        &.active {
+            background-color: $purple;
+            color: $white;
+        }
+    }
+}
+
+.tab-content {
+    display: none;
+    padding: 5px 8px;
+}
